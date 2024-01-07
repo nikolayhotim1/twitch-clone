@@ -1,49 +1,50 @@
 import { db } from '@/lib/db'
 import { getSelf } from '@/lib/auth-service'
 
-// export async function getFollowedUsers() {
-//     try {
-//         const self = await getSelf()
-//         const followedUsers = db.follow.findMany({
-//             where: {
-//                 followerId: self.id,
-//                 following: {
-//                     blocking: {
-//                         none: {
-//                             blockedId: self.id
-//                         }
-//                     }
-//                 }
-//             },
-//             include: {
-//                 following: {
-//                     include: {
-//                         stream: {
-//                             select: {
-//                                 isLive: true
-//                             }
-//                         }
-//                     }
-//                 }
-//             },
-//             orderBy: [
-//                 {
-//                     following: {
-//                         stream: {
-//                             isLive: 'desc'
-//                         }
-//                     }
-//                 },
-//                 {
-//                     createdAt: 'desc'
-//                 }
-//             ]
-//         })
-//         return followedUsers
-//     } catch {
-//         return []
-//     }
-// }
+export async function getFollowedUsers() {
+	try {
+		const self = await getSelf()
+		const followedUsers = db.follow.findMany({
+			where: {
+				followerId: self.id
+				// following: {
+				//     blocking: {
+				//         none: {
+				//             blockedId: self.id
+				//         }
+				//     }
+				// }
+			},
+			include: {
+				following: true
+				// following: {
+				//     include: {
+				//         stream: {
+				//             select: {
+				//                 isLive: true
+				//             }
+				//         }
+				//     }
+				// }
+			}
+			// orderBy: [
+			//     {
+			//         following: {
+			//             stream: {
+			//                 isLive: 'desc'
+			//             }
+			//         }
+			//     },
+			//     {
+			//         createdAt: 'desc'
+			//     }
+			// ]
+		})
+		return followedUsers
+	} catch {
+		return []
+	}
+}
 
 export async function isFollowingUser(id: string) {
 	try {
