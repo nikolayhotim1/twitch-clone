@@ -27,16 +27,16 @@ export async function getRecommended() {
 								}
 							}
 						}
+					},
+					{
+						NOT: {
+							blocking: {
+								some: {
+									blockedId: userId
+								}
+							}
+						}
 					}
-					// 				{
-					// 					NOT: {
-					// 						blocking: {
-					// 							some: {
-					// 								blockedId: userId
-					// 							}
-					// 						}
-					// 					}
-					// 				}
 				]
 			},
 			// 		include: {
