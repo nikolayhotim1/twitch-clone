@@ -39,19 +39,19 @@ export async function getRecommended() {
 					}
 				]
 			},
-			// 		include: {
-			// 			stream: {
-			// 				select: {
-			// 					isLive: true
-			// 				}
-			// 			}
-			// 		},
+			include: {
+				stream: {
+					select: {
+						isLive: true
+					}
+				}
+			},
 			orderBy: [
-				// 			{
-				// 				stream: {
-				// 					isLive: 'desc'
-				// 				}
-				// 			},
+				{
+					stream: {
+						isLive: 'desc'
+					}
+				},
 				{
 					createdAt: 'desc'
 				}
@@ -59,19 +59,19 @@ export async function getRecommended() {
 		})
 	} else {
 		users = await db.user.findMany({
-			// 		include: {
-			// 			stream: {
-			// 				select: {
-			// 					isLive: true
-			// 				}
-			// 			}
-			// 		},
+			include: {
+				stream: {
+					select: {
+						isLive: true
+					}
+				}
+			},
 			orderBy: [
-				// 			{
-				// 				stream: {
-				// 					isLive: 'desc'
-				// 				}
-				// 			},
+				{
+					stream: {
+						isLive: 'desc'
+					}
+				},
 				{
 					createdAt: 'desc'
 				}

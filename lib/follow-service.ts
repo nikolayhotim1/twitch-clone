@@ -16,29 +16,28 @@ export async function getFollowedUsers() {
 				}
 			},
 			include: {
-				following: true
-				// following: {
-				//     include: {
-				//         stream: {
-				//             select: {
-				//                 isLive: true
-				//             }
-				//         }
-				//     }
-				// }
-			}
-			// orderBy: [
-			//     {
-			//         following: {
-			//             stream: {
-			//                 isLive: 'desc'
-			//             }
-			//         }
-			//     },
-			//     {
-			//         createdAt: 'desc'
-			//     }
-			// ]
+				following: {
+					include: {
+						stream: {
+							select: {
+								isLive: true
+							}
+						}
+					}
+				}
+			},
+			orderBy: [
+				{
+					following: {
+						stream: {
+							isLive: 'desc'
+						}
+					}
+				},
+				{
+					createdAt: 'desc'
+				}
+			]
 		})
 		return followedUsers
 	} catch {
