@@ -45,15 +45,9 @@ export function LiveVideo({ participant }: LiveVideoProps) {
 		const isCurrentlyFullscreen = document.fullscreenElement !== null
 		setIsFullscreen(isCurrentlyFullscreen)
 	}
-	useEventListener(
-		'fullscreenchange',
-		handleFullscreenChange,
-		wrapperRef
-	)
+	useEventListener('fullscreenchange', handleFullscreenChange, wrapperRef)
 	useTracks([Track.Source.Camera, Track.Source.Microphone])
-		.filter(
-			track => track.participant.identity === participant.identity
-		)
+		.filter(track => track.participant.identity === participant.identity)
 		.forEach(track => {
 			if (videoRef.current) {
 				track.publication.track?.attach(videoRef.current)

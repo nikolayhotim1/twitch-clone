@@ -7,17 +7,16 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from 'sonner'
 
 const inter = Inter({ subsets: ['latin'] })
+interface RootLayoutProps {
+	children: React.ReactNode
+}
 
 export const metadata: Metadata = {
 	title: 'Gamehub',
 	description: 'Fullstack Twitch Clone'
 }
 
-export default function RootLayout({
-	children
-}: {
-	children: React.ReactNode
-}) {
+export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<ClerkProvider appearance={{ baseTheme: dark }}>
 			<html lang='en'>

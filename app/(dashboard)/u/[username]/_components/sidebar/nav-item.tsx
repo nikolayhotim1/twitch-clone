@@ -14,12 +14,7 @@ interface NavItemProps {
 	isActive: boolean
 }
 
-export function NavItem({
-	icon: Icon,
-	label,
-	href,
-	isActive
-}: NavItemProps) {
+export function NavItem({ icon: Icon, label, href, isActive }: NavItemProps) {
 	const { collapsed } = useCreatorSidebar(state => state)
 	return (
 		<Button
@@ -34,10 +29,7 @@ export function NavItem({
 			<Link href={href}>
 				<div className='flex items-center gap-x-4'>
 					<Icon
-						className={cn(
-							'h-4 w-4',
-							collapsed ? 'mr-0' : 'mr-2'
-						)}
+						className={cn('h-4 w-4', collapsed ? 'mr-0' : 'mr-2')}
 					/>
 					{!collapsed && <span>{label}</span>}
 				</div>

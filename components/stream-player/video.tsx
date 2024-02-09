@@ -31,11 +31,7 @@ export function Video({ hostName, hostIdentity }: VideoProps) {
 	} else {
 		content = <LiveVideo participant={participant} />
 	}
-	return (
-		<div className='aspect-video border-b group relative'>
-			{content}
-		</div>
-	)
+	return <div className='aspect-video border-b group relative'>{content}</div>
 }
 
 export function VideoSkeleton() {

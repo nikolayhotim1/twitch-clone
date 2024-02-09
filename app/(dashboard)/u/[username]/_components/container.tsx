@@ -5,7 +5,11 @@ import { useMediaQuery } from 'usehooks-ts'
 import { cn } from '@/lib/utils'
 import { useCreatorSidebar } from '@/store/use-creator-sidebar'
 
-export function Container({ children }: { children: React.ReactNode }) {
+interface ContainerProps {
+	children: React.ReactNode
+}
+
+export function Container({ children }: ContainerProps) {
 	const { collapsed, onCollapse, onExpand } = useCreatorSidebar(
 		state => state
 	)

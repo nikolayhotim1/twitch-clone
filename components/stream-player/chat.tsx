@@ -65,10 +65,7 @@ export function Chat({
 			<ChatHeader />
 			{variant === ChatVariant.CHAT && (
 				<>
-					<ChatList
-						messages={reversedMessages}
-						isHidden={isHidden}
-					/>
+					<ChatList messages={reversedMessages} isHidden={isHidden} />
 					<ChatForm
 						onSubmit={onSubmit}
 						value={value}

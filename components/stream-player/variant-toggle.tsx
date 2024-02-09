@@ -10,9 +10,7 @@ export function VariantToggle() {
 	const isChat = variant === ChatVariant.CHAT
 	const Icon = isChat ? Users : MessageSquare
 	function onToggle() {
-		const newVariant = isChat
-			? ChatVariant.COMMUNITY
-			: ChatVariant.CHAT
+		const newVariant = isChat ? ChatVariant.COMMUNITY : ChatVariant.CHAT
 		onChangeVariant(newVariant)
 	}
 	const label = isChat ? 'Community' : 'Go back to chat'

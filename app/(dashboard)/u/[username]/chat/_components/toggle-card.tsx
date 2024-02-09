@@ -13,11 +13,7 @@ interface ToggleCardProps {
 	field: FieldTypes
 }
 
-export function ToggleCard({
-	label,
-	value = false,
-	field
-}: ToggleCardProps) {
+export function ToggleCard({ label, value = false, field }: ToggleCardProps) {
 	const [isPending, startTransition] = useTransition()
 	function onChange() {
 		startTransition(() => {

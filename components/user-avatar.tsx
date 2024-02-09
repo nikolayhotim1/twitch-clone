@@ -1,11 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 import { Skeleton } from '@/components/ui/skeleton'
-import {
-	Avatar,
-	AvatarFallback,
-	AvatarImage
-} from '@/components/ui/avatar'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { LiveBadge } from './live-badge'
 
 const avatarSizes = cva('', {
@@ -38,8 +34,7 @@ export function UserAvatar({
 		<div className='relative'>
 			<Avatar
 				className={cn(
-					isLive &&
-						'ring-2 ring-rose-500 border border-background',
+					isLive && 'ring-2 ring-rose-500 border border-background',
 					avatarSizes({ size })
 				)}
 			>
@@ -58,11 +53,8 @@ export function UserAvatar({
 	)
 }
 
-interface UserAvatarSkeletonProps
-	extends VariantProps<typeof avatarSizes> {}
+interface UserAvatarSkeletonProps extends VariantProps<typeof avatarSizes> {}
 
 export function UserAvatarSkeleton({ size }: UserAvatarSkeletonProps) {
-	return (
-		<Skeleton className={cn('rounded-full', avatarSizes({ size }))} />
-	)
+	return <Skeleton className={cn('rounded-full', avatarSizes({ size }))} />
 }

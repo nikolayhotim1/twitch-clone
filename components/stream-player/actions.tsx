@@ -16,11 +16,7 @@ interface ActionsProps {
 	isHost: boolean
 }
 
-export function Actions({
-	hostIdentity,
-	isFollowing,
-	isHost
-}: ActionsProps) {
+export function Actions({ hostIdentity, isFollowing, isHost }: ActionsProps) {
 	const [isPending, startTransition] = useTransition()
 	const router = useRouter()
 	const { userId } = useAuth()

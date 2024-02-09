@@ -7,7 +7,11 @@ import { FollowingSkeleton } from './following'
 import { RecommendedSkeleton } from './recommended'
 import { cn } from '@/lib/utils'
 
-export function Wrapper({ children }: { children: React.ReactNode }) {
+interface WrapperProps {
+	children: React.ReactNode
+}
+
+export function Wrapper({ children }: WrapperProps) {
 	const isClient = useIsClient()
 	const { collapsed } = useSidebar(state => state)
 	if (!isClient) {

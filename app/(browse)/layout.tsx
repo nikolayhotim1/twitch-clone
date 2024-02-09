@@ -3,11 +3,11 @@ import { Container } from './_components/container'
 import { Navbar } from './_components/navbar'
 import { Sidebar, SidebarSkeleton } from './_components/sidebar'
 
-export default function BrowseLayout({
-	children
-}: {
+interface BrowseLayoutProps {
 	children: React.ReactNode
-}) {
+}
+
+export default function BrowseLayout({ children }: BrowseLayoutProps) {
 	return (
 		<>
 			<Navbar />

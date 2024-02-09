@@ -43,9 +43,7 @@ export function UserItem({ username, imageUrl, isLive }: UserItemProps) {
 						isLive={isLive}
 					/>
 					{!collapsed && <p className='truncate'>{username}</p>}
-					{!collapsed && isLive && (
-						<LiveBadge className='ml-auto' />
-					)}
+					{!collapsed && isLive && <LiveBadge className='ml-auto' />}
 				</div>
 			</Link>
 		</Button>

@@ -3,7 +3,11 @@
 import { cn } from '@/lib/utils'
 import { useCreatorSidebar } from '@/store/use-creator-sidebar'
 
-export function Wrapper({ children }: { children: React.ReactNode }) {
+interface WrapperProps {
+	children: React.ReactNode
+}
+
+export function Wrapper({ children }: WrapperProps) {
 	const { collapsed } = useCreatorSidebar(state => state)
 	return (
 		<aside

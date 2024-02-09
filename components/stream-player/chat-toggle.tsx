@@ -6,9 +6,7 @@ import { Button } from '@/components/ui/button'
 import { useChatSidebar } from '@/store/use-chat-sidebar'
 
 export function ChatToggle() {
-	const { collapsed, onExpand, onCollapse } = useChatSidebar(
-		state => state
-	)
+	const { collapsed, onExpand, onCollapse } = useChatSidebar(state => state)
 	const Icon = collapsed ? ArrowLeftFromLine : ArrowRightFromLine
 	function onToggle() {
 		if (collapsed) {

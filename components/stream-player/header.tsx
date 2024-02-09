@@ -45,9 +45,7 @@ export function Header({
 				/>
 				<div className='space-y-1'>
 					<div className='flex items-center gap-x-2'>
-						<h2 className='text-lg font-semibold'>
-							{hostName}
-						</h2>
+						<h2 className='text-lg font-semibold'>{hostName}</h2>
 						<VerifiedMark />
 					</div>
 					<p className='text-sm font-semibold'>{name}</p>
@@ -56,9 +54,7 @@ export function Header({
 							<UserIcon className='h-4 w-4' />
 							<p>
 								{participantCount}{' '}
-								{participantCount === 1
-									? 'viewer'
-									: 'viewers'}
+								{participantCount === 1 ? 'viewer' : 'viewers'}
 							</p>
 						</div>
 					) : (
