@@ -1,4 +1,6 @@
-# This is a repository for Fullstack Twitch Clone: Next.js 14, Livestreaming, React, Prisma, TypeScript, Tailwind, MySQL
+# Full-Stack Twitch Clone: Next, React, MySQL, Prisma, Livestreaming, TypeScript, Tailwind
+
+![Twitch Clone Thumbnail (3)](https://github.com/AntonioErdeljac/next14-twitch-clone/assets/23248726/6e0153f1-ab30-4924-9f06-13d2f46ff3b5)
 
 Key Features:
 
